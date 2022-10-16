@@ -11,29 +11,101 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+This is a simple package which can be used to input KYC documents such as National ID, and a selfie.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+This can be used to input KYC documents such as National ID, and a selfie.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+1. Add the latest version of the package to your pubspec.yaml (and run 'dart pub get'):
+
+dependencies:
+  kyc: ^0.0.1
+
+---
+
+2. Android
+
+   Add UCropActivity into your AndroidManifest.xml
+
+   ```xml
+   <activity
+   	android:name="com.yalantis.ucrop.UCropActivity" 
+   	android:screenOrientation="portrait" 
+   	android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+   ```
+
+---
+
+3. Web
+
+   Add following codes inside `<head>` tag in file `web/index.html`:
+
+```
+   <head>
+     ....
+
+     <!-- Croppie -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.css" />
+     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js"></script>
+
+     ....
+   </head>
+```
+
+
+---
+
+
+
+5. Import the package and use it in your Flutter App.
+
+ import *package:kyc/kyc.dart*;
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
-const like = 'sample';
+import 'package:flutter/material.dart';
+import 'package:kyc/kyc.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Kyc(),
+    );
+  }
+}
+
 ```
 
 ## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.

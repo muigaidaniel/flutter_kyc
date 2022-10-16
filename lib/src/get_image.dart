@@ -1,5 +1,4 @@
-import 'dart:io';
-import 'package:flutter/material.dart';
+part of 'kyc.dart';
 
 class GetImage extends StatelessWidget {
   const GetImage(
@@ -35,7 +34,8 @@ class GetImage extends StatelessWidget {
           ),
           type == 'selfie'
               ? CircleAvatar(
-                  backgroundColor: image1 == null ? Colors.blue : null,
+                  backgroundColor:
+                      image1 == null ? Theme.of(context).primaryColor : null,
                   backgroundImage: image1 != null ? FileImage(image1!) : null,
                   radius: MediaQuery.of(context).size.width * 0.3,
                   child: image1 == null
@@ -45,9 +45,9 @@ class GetImage extends StatelessWidget {
               : Container(
                   width: MediaQuery.of(context).size.width * 0.8,
                   height: MediaQuery.of(context).size.height * 0.25,
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                    color: Colors.blue,
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(Radius.circular(20)),
+                    color: Theme.of(context).primaryColor,
                   ),
                   child: image1 != null
                       ? ClipRRect(

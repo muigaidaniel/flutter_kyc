@@ -1,7 +1,7 @@
-name: kyc
+name: flutter_kyc
 description: A package for verifying KYC documents.
 version: 0.0.1
-homepage:
+homepage: https://github.com/muigaidaniel/flutter_kyc
 
 environment:
   sdk: ">=2.17.3 <3.0.0"

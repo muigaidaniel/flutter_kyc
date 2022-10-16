@@ -1,3 +1,3 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* This is a simple package which can be used to verify KYC documents such as National ID, and a selfie.

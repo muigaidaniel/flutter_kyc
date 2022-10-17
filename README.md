@@ -21,8 +21,10 @@ This can be used to input KYC documents such as National ID, and a selfie.
 
 1. Add the latest version of the package to your pubspec.yaml (and run 'dart pub get'):
 
+```yaml
 dependencies:
   kyc: ^0.0.1
+```
 
 ---
 
@@ -56,10 +58,7 @@ dependencies:
    </head>
 ```
 
-
 ---
-
-
 
 5. Import the package and use it in your Flutter App.
 

@@ -1,4 +1,4 @@
-part of 'kyc.dart';
+part of 'flutter_kyc.dart';
 
 class GetImage extends StatelessWidget {
   const GetImage(
@@ -18,10 +18,10 @@ class GetImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.6,
-      margin: const EdgeInsets.all(20),
+      height: MediaQuery.of(context).size.height * 0.65,
+      margin: const EdgeInsets.symmetric(horizontal: 10),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(

@@ -1,3 +1,3 @@
 library flutter_kyc;
 
-export 'src/kyc.dart';
+export 'src/flutter_kyc.dart';

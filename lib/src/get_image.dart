@@ -123,7 +123,8 @@ class GetImage extends StatelessWidget {
                         );
                       });
                 },
-                child: const Text('Select Image')),
+                child:
+                    Text(image1 != null ? 'Reselect Image' : 'Select Image')),
           )
         ],
       ),

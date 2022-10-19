@@ -68,7 +68,7 @@ dependencies:
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:kyc/kyc.dart';
+import 'package:flutter_kyc/flutter_kyc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -81,8 +81,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: const MyHomePage(),
     );
@@ -99,11 +100,37 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Kyc(),
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            showModalBottomSheet(
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(20),
+                  ),
+                ),
+                isScrollControlled: true,
+                context: context,
+                builder: (context) {
+                  return Container(
+                    margin: const EdgeInsets.only(top: 20),
+                    height: MediaQuery.of(context).size.height * 0.9,
+                    child: Kyc(
+                      onSubmit: (data) {
+                        print(data);
+                      },
+                    ),
+                  );
+                });
+          },
+          child: const Text('Start KYC'),
+        ),
+      ),
     );
   }
 }
+
 
 ```
 
